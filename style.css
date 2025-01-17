@@ -1,3 +1,67 @@
-h1 {
-  background-color: aqua;
+body {
+  background-color: peachpuff;
+}
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.select {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.city-name {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.date {
+  opacity: 0.7;
+}
+
+.time {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.time small {
+  font-size: 24px;
+  line-height: 36px;
+  vertical-align: middle;
+}
+
+.container {
+  background-color: white;
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.city-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.city-container :last-child {
+  border: none;
+}
+
+.left-container {
+  align-content: center;
+}
+
+footer {
+  padding-top: 30px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
 }
