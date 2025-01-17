@@ -51,7 +51,7 @@ body {
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
-.main-container :last-child {
+.container :last-child {
   border: none;
 }
 
