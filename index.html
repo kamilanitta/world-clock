@@ -10,6 +10,8 @@
       rel="stylesheet"
       href="./style.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock - Kamila Nitta</title>
   </head>
   <body>
@@ -25,18 +27,18 @@
 
       <select class="select">
         <option>Select a city</option>
-        <option>Berlin</option>
+        <option id="city-option">Berlin</option>
         <option>Brasilia</option>
         <option>New York</option>
         <option>Tokyo</option>
       </select>
 
-      <div class="city-container">
-        <div class="left-container">
-          <h2 class="city-name">Berlin 🇩🇪</h2>
-          <p class="date">August 15th 2022</p>
+      <div class="main-container">
+        <div class="city-container">
+          <h2 class="city-name">Berlin</h2>
+          <p class="city-date">August 15th 2022</p>
         </div>
-        <p class="time">time <small>AM</small></p>
+        <p class="city-time">1:48:15 <small>AM</small></p>
       </div>
     </div>
 
