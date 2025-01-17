@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>World Clocks</h1>
+        <h1>World Clock</h1>
         <img
           src="./KN_Logo-bg.png"
           alt="World Clock"
@@ -30,8 +30,8 @@
         id="city-select"
       >
         <option value="">Select a city</option>
-        <option value="Europe/Berlin">Berlin</option>
-        <option value="America/Brasilia">Brasilia</option>
+        <option value="current">My current location</option>
+        <option value="Europe/Lisbon">Lisbon</option>
         <option value="America/New_York">New York</option>
         <option value="Asia/Tokyo">Tokyo</option>
       </select>
@@ -39,23 +39,22 @@
       <div id="cities">
         <div class="main-container">
           <div class="city-container">
-            <h2 class="city-name">Berlin</h2>
-            <p class="city-date">August 15th 2022</p>
+            <h2 class="city-name">Sao Paulo</h2>
+            <p class="city-date" id="sp-date"></p>
           </div>
-          <p class="city-time">1:48:15 <small>AM</small></p>
+          <p class="city-time" id="sp-time"></p>
         </div>
     
   
         <div class="main-container">
           <div class="city-container">
-            <h2 class="city-name">Paris</h2>
-            <p class="city-date">August 15th 2022</p>
+            <h2 class="city-name">Sydney</h2>
+            <p class="city-date" id="sydney-date">August 15th 2022</p>
           </div>
-          <p class="city-time">1:48:15 <small>AM</small></p>
+          <p class="city-time" id="sydney-time"></p>
         </div>
-
     </div>
-
+    <a href="./"> Return</a>
     </div>
     </div>
     

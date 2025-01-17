@@ -1,24 +1,33 @@
 const updateTime = () => {
-  let cityName = document.querySelector(".city-name");
-  let cityDate = document.querySelector(".city-date");
-  let cityTime = document.querySelector(".city-time");
+  let spDate = document.querySelector("#sp-date");
+  let spTime = document.querySelector("#sp-time");
 
-  cityDate.innerHTML = moment().format("MMM Do, YYYY");
-  cityTime.innerHTML = moment()
-    .tz("Europe/Berlin")
+  spDate.innerHTML = moment().tz("America/Sao_Paulo").format("MMM Do, YYYY");
+  spTime.innerHTML = moment()
+    .tz("America/Sao_Paulo")
+    .format("HH:mm:ss [<small>]A[</small>]");
+
+  //Update Sydney
+
+  let sydneyDate = document.querySelector("#sydney-date");
+  let sydneyTime = document.querySelector("#sydney-time");
+
+  sydneyDate.innerHTML = moment().tz("Australia/Sydney").format("MMM Do, YYYY");
+  sydneyTime.innerHTML = moment()
+    .tz("Australia/Sydney")
     .format("HH:mm:ss [<small>]A[</small>]");
 };
 
-updateTime();
-setInterval(updateTime, 1000);
-
-// let cities = ["Berlin 🇩🇪", "Brasilia 🇧🇷", "New York 🇺🇸", "Tokyo 🇯🇵"];
-
 const updateCity = (event) => {
   let { value } = event.target;
+
+  if (value === "current") {
+    value = moment.tz.guess();
+  }
+
   let cityName = value.replace("_", " ").split("/")[1];
-  console.log(cityName);
-  let cityTime = moment().tz(cityName);
+
+  let cityTime = moment().tz(value);
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = `
    <div class="main-container">
@@ -32,6 +41,8 @@ const updateCity = (event) => {
         </div>
   `;
 };
+updateTime();
+setInterval(updateTime, 1000);
 
 let citySelectionElement = document.querySelector("#city-select");
 
