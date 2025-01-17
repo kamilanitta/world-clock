@@ -14,20 +14,25 @@ setInterval(updateTime, 1000);
 
 // let cities = ["Berlin 🇩🇪", "Brasilia 🇧🇷", "New York 🇺🇸", "Tokyo 🇯🇵"];
 
-// let updateCity = () => {
-//   let select = document.querySelector(".select");
+const updateCity = (event) => {
+  let { value } = event.target;
+  let cityName = value.replace("_", " ").split("/")[1];
+  console.log(cityName);
+  let cityTime = moment().tz(cityName);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+   <div class="main-container">
+          <div class="city-container">
+            <h2 class="city-name">${cityName}</h2>
+            <p class="city-date">${cityTime.format("MMM Do, YYYY")}</p>
+          </div>
+          <div class="city-time">${cityTime.format(
+            "HH:mm:ss"
+          )} <small>${cityTime.format("A")}</small></div>
+        </div>
+  `;
+};
 
-//   cities.map((city, index) => {
-//     let option = document.createElement("#city-option");
-//     option.textContent = city;
+let citySelectionElement = document.querySelector("#city-select");
 
-//     option.value = city; // Define o valor do <option>
-//     select.appendChild(option);
-//   });
-
-//   return select;
-// };
-
-// console.log("city===>", updateCity());
-
-// console.log("kamila");
+citySelectionElement.addEventListener("change", updateCity);
